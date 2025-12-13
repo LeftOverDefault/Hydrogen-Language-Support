@@ -1,5 +1,5 @@
 
-# ![](./assets/icon.png) Hydrogen Language Support
+# ![](./assets/language_support_logo.png) Hydrogen Language Support
 
 ## Syntax
 

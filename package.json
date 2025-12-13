@@ -9,6 +9,9 @@
     "name": "Michael Goddard",
     "url": "https://github.com/LeftOverDefault"
   },
+  "repository": {
+    "url": "https://github.com/LeftOverDefault/Hydrogen-Language-Support"
+  },
   "publisher": "michael-goddard",
   "engines": {
     "vscode": "^1.107.0"
