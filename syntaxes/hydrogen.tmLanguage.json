@@ -1,0 +1,289 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"scopeName": "source.hydrogen",
+	"name": "Hydrogen",
+	"fileTypes": [
+		"hy"
+	],
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#imports"
+		},
+		{
+			"include": "#classes"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#template"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#values"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#identifiers"
+		}
+	],
+	"repository": {
+		"imports": {
+			"patterns": [
+				{
+					"name": "entity.name.namespace.import.hydrogen",
+					"match": "(?<=\\bfrom\\s+[\"'])[^\"']+(?=[\"'])"
+				},
+				{
+					"name": "entity.name.namespace.import.hydrogen",
+					"match": "(?<=\\bimport\\s+)[A-Za-z_][A-Za-z0-9_]*"
+				},
+				{
+					"name": "entity.name.namespace.import.hydrogen",
+					"begin": "(\\bimport\\b)\\s*(\\{)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.hydrogen"
+						},
+						"2": {
+							"name": "punctuation.section.import.begin.hydrogen"
+						}
+					},
+					"end": "\\}",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.section.import.end.hydrogen"
+						}
+					},
+					"patterns": [
+						{
+							"name": "entity.name.namespace.import.hydrogen",
+							"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+						},
+						{
+							"name": "punctuation.separator.comma.hydrogen",
+							"match": ","
+						}
+					]
+				}
+			]
+		},
+		"classes": {
+			"patterns": [
+				{
+					"name": "entity.name.type.class.hydrogen",
+					"match": "(?<=\\bclass\\s)[A-Za-z_][A-Za-z0-9_]*"
+				}
+			]
+		},
+		"functions": {
+			"patterns": [
+				{
+					"name": "entity.name.function.hydrogen",
+					"match": "[A-Za-z_][A-Za-z0-9_]*(?=\\()"
+				}
+			]
+		},
+		"comments": {
+			"patterns": [
+				{
+					"name": "comment.block.hydrogen",
+					"begin": "/\\*",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.begin.hydrogen"
+						}
+					},
+					"end": "\\*/",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.comment.end.hydrogen"
+						}
+					}
+				},
+				{
+					"name": "comment.line.double-slash.hydrogen",
+					"match": "--.*$"
+				}
+			]
+		},
+		"template": {
+			"patterns": [
+				{
+					"name": "string.template.hydrogen",
+					"begin": "`",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.hydrogen"
+						}
+					},
+					"end": "`",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.hydrogen"
+						}
+					},
+					"patterns": [
+						{
+							"name": "punctuation.section.template.expression.begin.hydrogen",
+							"match": "\\\\$\\{"
+						},
+						{
+							"begin": "\\$\\{",
+							"beginCaptures": {
+								"0": {
+									"name": "punctuation.section.template.expression.begin.hydrogen"
+								}
+							},
+							"end": "\\}",
+							"endCaptures": {
+								"0": {
+									"name": "punctuation.section.template.expression.end.hydrogen"
+								}
+							},
+							"patterns": [
+								{
+									"include": "#strings"
+								},
+								{
+									"include": "#numbers"
+								},
+								{
+									"include": "#keywords"
+								},
+								{
+									"include": "#types"
+								},
+								{
+									"include": "#operators"
+								},
+								{
+									"include": "#identifiers"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		"strings": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.hydrogen",
+					"begin": "\"",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.hydrogen"
+						}
+					},
+					"end": "\"",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.hydrogen"
+						}
+					},
+					"patterns": [
+						{
+							"name": "constant.character.escape.hydrogen",
+							"match": "\\\\."
+						}
+					]
+				},
+				{
+					"name": "string.quoted.single.hydrogen",
+					"begin": "'",
+					"beginCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.begin.hydrogen"
+						}
+					},
+					"end": "'",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.string.end.hydrogen"
+						}
+					},
+					"patterns": [
+						{
+							"name": "constant.character.escape.hydrogen",
+							"match": "\\\\."
+						}
+					]
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"name": "constant.numeric.float.hydrogen",
+					"match": "\\b\\d+\\.\\d+(?:[eE][+-]?\\d+)?\\b"
+				},
+				{
+					"name": "constant.numeric.integer.hydrogen",
+					"match": "\\b\\d+\\b"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.hydrogen",
+					"match": "\\b(?:let|const|func|public|private|implements|protected|method|class|if|elif|else|async|await|for|while|return|import|export|from|default|in|as)\\b"
+				}
+			]
+		},
+		"types": {
+			"patterns": [
+				{
+					"name": "storage.type.hydrogen",
+					"match": "\\b(?:char|str|int|float|double|bool|list|array|dict)\\b"
+				}
+			]
+		},
+		"values": {
+			"patterns": [
+				{
+					"name": "constant.language.hydrogen",
+					"match": "\\b(?:true|false|null)\\b"
+				}
+			]
+		},
+		"operators": {
+			"patterns": [
+				{
+					"name": "keyword.operator.hydrogen",
+					"match": "\\+\\+|\\+|\\-\\-|\\-|\\*\\*|\\*|\\/\\/|\\/|%|\\|\\||&&|!|==|:|=|!=|\\.|;|===|!==|>=|<=|<==|>==|>|<|\\+=|-=|\\*=|\\/=|%="
+				},
+				{
+					"name": "punctuation.separator.comma.hydrogen",
+					"match": "\\,"
+				}
+			]
+		},
+		"identifiers": {
+			"patterns": [
+				{
+					"name": "variable.other.hydrogen",
+					"match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+				}
+			]
+		}
+	},
+	"scopeNameAliases": {}
+}

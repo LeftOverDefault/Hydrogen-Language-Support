@@ -1,0 +1,61 @@
+{
+  "name": "hydrogen",
+  "icon": "./assets/icon.png",
+  "displayName": "Hydrogen Language Support",
+  "description": "Language Support for the Hydrogen Programming Language.",
+  "version": "0.1.0",
+  "author": {
+    "email": "michaelgoddard@outlook.com",
+    "name": "Michael Goddard",
+    "url": "https://github.com/LeftOverDefault"
+  },
+  "publisher": "michael-goddard",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "hydrogen",
+        "aliases": [
+          "Hydrogen",
+          "hydrogen"
+        ],
+        "extensions": [
+          "hy"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "hydrogen",
+        "path": "./snippets/snippets.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "hydrogen",
+        "scopeName": "source.hydrogen",
+        "path": "./syntaxes/hydrogen.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "Programmer Hydrogen Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/programmer-hydrogen-color-theme.json"
+      }
+    ],
+    "iconThemes": [
+      {
+        "id": "hydrogen-icons",
+        "label": "Hydrogen Icons",
+        "path": "./icons/hydrogen-icon-theme.json"
+      }
+    ]
+  }
+}

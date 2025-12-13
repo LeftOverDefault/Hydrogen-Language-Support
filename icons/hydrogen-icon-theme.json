@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+        "hydrogen-file": {
+            "iconPath": "../assets/icon.png"
+        }
+    },
+    "fileExtensions": {
+        "hy": "hydrogen-file"
+    },
+    "languageIds": [
+        "hydrogen"
+    ]
+}

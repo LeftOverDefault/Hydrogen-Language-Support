@@ -1,0 +1,154 @@
+{
+	"Create String Variable": {
+		"scope": "hydrogen",
+		"prefix": "let_string",
+		"body": [
+			"let $1: str = \"$2\";"
+		],
+		"description": "Create a String Variable"
+	},
+	"Create Character Variable": {
+		"scope": "hydrogen",
+		"prefix": "let_character",
+		"body": [
+			"let $1: char = '$2';"
+		],
+		"description": "Create a Character Variable"
+	},
+	"Create Integer Variable": {
+		"scope": "hydrogen",
+		"prefix": "let_integer",
+		"body": [
+			"let $1:  = $2;"
+		],
+		"description": "Create a Integer Variable"
+	},
+	"Create Float Variable": {
+		"scope": "hydrogen",
+		"prefix": "let_float",
+		"body": [
+			"let $1: float = $2.$3;"
+		],
+		"description": "Create a Float Variable"
+	},
+	"Create Double Variable": {
+		"scope": "hydrogen",
+		"prefix": "let_double",
+		"body": [
+			"let $1: double = $2.$3;"
+		],
+		"description": "Create a Double Variable"
+	},
+	"Create Boolean Variable": {
+		"scope": "hydrogen",
+		"prefix": "let_boolean",
+		"body": [
+			"let $1: bool = $2;"
+		],
+		"description": "Create a Boolean Variable"
+	},
+    "Create String Constant": {
+		"scope": "hydrogen",
+		"prefix": "const_string",
+		"body": [
+			"const $1: str = \"$2\";"
+		],
+		"description": "Create a String Constant"
+	},
+	"Create Character Constant": {
+		"scope": "hydrogen",
+		"prefix": "const_character",
+		"body": [
+			"const $1: char = '$2';"
+		],
+		"description": "Create a Character Constant"
+	},
+	"Create Integer Constant": {
+		"scope": "hydrogen",
+		"prefix": "const_integer",
+		"body": [
+			"const $1:  = $2;"
+		],
+		"description": "Create a Integer Constant"
+	},
+	"Create Float Constant": {
+		"scope": "hydrogen",
+		"prefix": "const_float",
+		"body": [
+			"const $1: float = $2.$3;"
+		],
+		"description": "Create a Float Constant"
+	},
+	"Create Double Constant": {
+		"scope": "hydrogen",
+		"prefix": "const_double",
+		"body": [
+			"const $1: double = $2.$3;"
+		],
+		"description": "Create a Double Constant"
+	},
+	"Create Boolean Constant": {
+		"scope": "hydrogen",
+		"prefix": "const_boolean",
+		"body": [
+			"const $1: bool = $2;"
+		],
+		"description": "Create a Boolean Constant"
+	},
+	"Create a Function": {
+		"scope": "hydrogen",
+		"prefix": "func",
+		"body": [
+			"func $1() -> null {",
+			"\t$2;",
+			"}"
+		],
+		"description": "Create a Function containing Parameters."
+	},
+	"Create a Function (Ret)": {
+		"scope": "hydrogen",
+		"prefix": "func_ret",
+		"body": [
+			"func $1() -> $2 {",
+			"\t$3",
+			"\t-- return $4;",
+			"}"
+		],
+		"description": "Create a Function, that has a Return value."
+	},
+	"Create a Function (Param)": {
+		"scope": "hydrogen",
+		"prefix": "func_param",
+		"body": [
+			"func $1( $2: $3 = $4 ) -> null {",
+			"\t$5;",
+			"}"
+		],
+		"description": "Create a Function containing Parameters."
+	},
+	"Create a Function (Param, Ret)": {
+		"scope": "hydrogen",
+		"prefix": "func_param_ret",
+		"body": [
+			"func $1( $2: $3 = $4 ) -> $5 {",
+			"\t$6",
+            "\t-- return $7;",
+			"}"
+		],
+		"description": "Create a Function containing Parameters, that has a Return value."
+	},
+    "Import Default Module": {
+        "scope": "hydrogen",
+        "prefix": "import_default",
+        "body": [
+            "import $1 from \"$2\";"
+        ]
+    },
+    "Import Module": {
+        "scope": "hydrogen",
+        "prefix": "import_standard",
+        "body": [
+            "import { $1 } from \"$2\";"
+        ]
+    }
+}

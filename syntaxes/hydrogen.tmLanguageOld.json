@@ -1,0 +1,55 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Hydrogen",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#template"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#values"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#identifiers"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.hydrogen",
+					"match": "\\b(import|export|default|from|let|const|async|await|func|class|method|if|elif|else|for|while)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.hydrogen",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.hydrogen",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.hydrogen"
+}
